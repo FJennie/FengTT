@@ -20,7 +20,6 @@ from list.views import home_page
 #
 #         self.assertTemplateUsed(response, 'home.html')
 class HomePageTest(TestCase):
-    # 111111111111111111111111111111
     def test_uses_home_templage(self):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
