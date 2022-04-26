@@ -4,7 +4,6 @@ from django.urls import resolve
 from list.views import home_page
 # Create your tests here.
 
-
 class HomePageTest(TestCase):
     def test_root_url_resolve_to_home_page_view(self):
         found = resolve('/')
@@ -17,3 +16,4 @@ class HomePageTest(TestCase):
         self.assertTrue(html.startswith('<html>'))
         self.assertIn('<title>To-Do list</title>', html)
         self.assertTrue(html.endswith('</html>'))
+
