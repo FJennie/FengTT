@@ -3,17 +3,15 @@ from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-
 from selenium.common.exceptions import WebDriverException
 import os
 MAX_WAIT = 10
 
+
 class NewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Chrome(executable_path=r'D:\Google Driver\chromedriver.exe')
-        staging_server = os.environ.get('STAGING_SERVER')
-        if staging_server:
-            self.live_server_url = 'http://'+staging_server
+        self.live_server_url = 'http://'+'120.25.169.249'
 
     def tearDown(self):
         self.browser.quit()
